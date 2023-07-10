@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+class Distance
+{
+private:
+    int feet;
+    int inch;
+public:
+    void input_distance()
+    {
+        cout << "Enter feet: ";
+        cin >> feet;
+        cout << "Enter inches: ";
+        cin >> inch;
+    }
+    void count_distance()
+    {
+        cout << "Distance will be: feet= " << feet << " and inches= " << inch << endl;
+    }
+    void add(Distance D1, Distance D2)
+    {
+        feet = D1.feet + D2.feet;
+        inch = D1.inch + D2.inch;
+        feet = feet + (inch / 12);
+        inch = inch % 12;
+    }
+};
+int main()
+{
+    Distance D1, D2, D3;
+    D1.input_distance();
+    D2.input_distance();
+    D3.add(D1, D2);
+    D3.count_distance();
+    return 0;
+}
